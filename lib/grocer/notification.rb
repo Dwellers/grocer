@@ -12,12 +12,13 @@ module Grocer
     # Public: Initialize a new Grocer::Notification. You must specify at least an `alert` or `badge`.
     #
     # payload - The Hash of notification parameters and payload to be sent to APNS.:
-    #           :device_token - The String representing to device token sent to APNS.
-    #           :alert        - The String or Hash to be sent as the alert portion of the payload. (optional)
-    #           :badge        - The Integer to be sent as the badge portion of the payload. (optional)
-    #           :sound        - The String representing the sound portion of the payload. (optional)
-    #           :expiry       - The Integer representing UNIX epoch date sent to APNS as the notification expiry. (default: 0)
-    #           :identifier   - The arbitrary Integer sent to APNS to uniquely this notification. (default: 0)
+    #           :device_token      - The String representing to device token sent to APNS.
+    #           :alert             - The String or Hash to be sent as the alert portion of the payload. (optional)
+    #           :badge             - The Integer to be sent as the badge portion of the payload. (optional)
+    #           :sound             - The String representing the sound portion of the payload. (optional)
+    #           :expiry            - The Integer representing UNIX epoch date sent to APNS as the notification expiry. (default: 0)
+    #           :identifier        - The arbitrary Integer sent to APNS to uniquely this notification. (default: 0)
+    #           :content_available - The truthy or falsy value indicating the availability of new content for background fetch. (optional)
     def initialize(payload = {})
       payload.each do |key, val|
         send("#{key}=", val)
