@@ -7,7 +7,7 @@ module Grocer
     CONTENT_AVAILABLE_INDICATOR = 1
 
     attr_accessor :identifier, :expiry, :device_token
-    attr_reader :alert, :badge, :custom, :sound
+    attr_reader :alert, :badge, :custom, :sound, :content_available
 
     attr_accessor :created_at
     # Public: Initialize a new Grocer::Notification. You must specify at least an `alert` or `badge`.
